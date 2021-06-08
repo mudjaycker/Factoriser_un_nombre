@@ -22,7 +22,7 @@ def factorise(nbre:float):
     #Algorithme dans un 'try-except' pour eviter le message d'erreur en cas de division par zero
     try:
         while(int_tempo_quotient<=nbre):
-            int_tempo_quotient-=1
+            int_tempo_quotient -= 1
             resultat=nbre/int_tempo_quotient
             
             p=resultat #facultatif juste pour conserver nos valeurs qlq part :)
