@@ -1,8 +1,8 @@
 from math import sqrt
 from numba import jit
 
-@jit(nopython = True)
-def factorise(nbre : float):  
+#@jit(nopython = True)
+def factorise(nbre:float):  
     tempo_quotient = sqrt(nbre)
     int_tempo_quotient = int(tempo_quotient)
     
@@ -13,6 +13,11 @@ def factorise(nbre : float):
     if (int_tempo_quotient**2==nbre):
         nbre2=int_tempo_quotient
         print(f'{nbre2} x {nbre2} font => {nbre2*nbre2}')
+    elif(nbre < 10):
+        if(nbre%2==0):
+            print(f"{nbre//2} X 2 = {nbre}")
+        elif(nbre%3==0):
+            print(f"{nbre//3} X 3 = {nbre}")
 
     #Algorithme dans un 'try-except' pour eviter le message d'erreur en cas de division par zero
     try:
@@ -28,3 +33,9 @@ def factorise(nbre : float):
 
     except:
         print("")
+        
+def run():
+    nbre = float(input("Tapez un nombre ==> "))
+    factorise(nbre)
+if __name__=="__main__":
+    run()
